@@ -3,249 +3,426 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aalap Pharma</title>
+<title>Aalap Pharma | Trusted Healthcare. Better Tomorrow.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7fa;
+background:#ffffff;
+overflow-x:hidden;
 }
+
+/* NAVBAR */
 
 header{
-background:#0b5ed7;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-.search-box{
-width:90%;
-max-width:500px;
-margin:20px auto;
-}
-
-.search-box input{
+position:fixed;
+top:0;
 width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
+z-index:1000;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+height:55px;
+}
+
+.logo h2{
+color:#0057B8;
+font-size:28px;
+font-weight:700;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+margin-left:30px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#0057B8;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,48,102,.78),rgba(0,48,102,.78)),
+url("https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=1800");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 8%;
+color:white;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero-content h1{
+font-size:72px;
+line-height:1.1;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:35px;
+color:#e8f0ff;
+}
+
+.btn{
+display:inline-block;
+padding:16px 34px;
+background:#00C853;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+margin-right:15px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.btn-outline{
+background:transparent;
+border:2px solid white;
+}
+
+/* STATS */
+
+.stats{
+padding:80px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:-60px;
+}
+
+.stat-box{
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.stat-box h2{
+color:#0057B8;
+font-size:42px;
+}
+
+/* ABOUT */
+
+.section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+font-weight:700;
+color:#003366;
+margin-bottom:20px;
+}
+
+.section-sub{
+text-align:center;
+max-width:900px;
+margin:auto;
+color:#666;
+line-height:1.8;
+font-size:18px;
+}
+
+/* PRODUCTS */
 
 .products{
+margin-top:60px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+transition:.3s;
 }
 
-.card h3{
-margin-bottom:10px;
-color:#0b5ed7;
+.card:hover{
+transform:translateY(-10px);
 }
 
-.card button{
-margin-top:10px;
-padding:10px 15px;
-background:#198754;
-color:white;
-border:none;
-cursor:pointer;
-border-radius:5px;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
+.card img{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
+height:220px;
+object-fit:cover;
 }
 
-.modal-content{
-background:white;
-width:90%;
-max-width:600px;
-padding:30px;
-margin:100px auto;
-border-radius:10px;
-position:relative;
+.card-content{
+padding:25px;
 }
 
-.close{
-position:absolute;
-right:20px;
-top:15px;
-cursor:pointer;
-font-size:25px;
+.card-content h3{
+color:#0057B8;
+margin-bottom:10px;
 }
+
+/* WHY */
+
+.why{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.why-box{
+background:#f8fbff;
+padding:35px;
+border-radius:20px;
+text-align:center;
+}
+
+.why-box h3{
+margin-top:15px;
+color:#003366;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#0057B8,#003366);
+color:white;
+text-align:center;
+padding:100px 8%;
+}
+
+.cta h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:46px;
+}
+
+nav{
+display:none;
+}
+
+.section-title{
+font-size:34px;
+}
+
+}
+
 </style>
 </head>
 <body>
 
 <header>
-<h1>Aalap Pharma</h1>
-<p>Trusted Healthcare. Better Tomorrow.</p>
+
+<div class="logo">
+<img src="images/logo.png" alt="Aalap Pharma Logo">
+<h2>Aalap Pharma</h2>
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Products</a>
+<a href="#">Quality</a>
+<a href="#">Partners</a>
+<a href="#">Contact</a>
+</nav>
+
 </header>
 
-<div class="search-box">
-<input type="text" id="search" placeholder="Search Product">
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Trusted Healthcare.<br>Better Tomorrow.</h1>
+
+<p>
+Aalap Pharma delivers innovative, high-quality pharmaceutical
+products designed to improve lives, support healthcare professionals,
+and build healthier communities.
+</p>
+
+<a href="#" class="btn">Explore Products</a>
+<a href="#" class="btn btn-outline">Become Distributor</a>
+
 </div>
 
-<div class="products" id="productContainer"></div>
+</section>
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">×</span>
+<section class="stats">
 
-<h2 id="title"></h2>
-<p id="details"></p>
-
-</div>
+<div class="stat-box">
+<h2>13+</h2>
+<p>Products</p>
 </div>
 
-<script>
+<div class="stat-box">
+<h2>100%</h2>
+<p>Quality Focus</p>
+</div>
 
-const products = [
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Customer Support</p>
+</div>
 
-{
-name:"Aalacold Tablet",
-details:"Cold and fever relief medication."
-},
+<div class="stat-box">
+<h2>India</h2>
+<p>Growing Distribution Network</p>
+</div>
 
-{
-name:"Aalukast-M Tablet",
-details:"Used in allergy and asthma management."
-},
+</section>
 
-{
-name:"Aalazi 250",
-details:"Antibiotic medicine."
-},
+<section class="section">
 
-{
-name:"Aalazi 500",
-details:"Higher strength antibiotic."
-},
+<h2 class="section-title">About Aalap Pharma</h2>
 
-{
-name:"Aalaclav-CV",
-details:"Broad spectrum antibiotic."
-},
+<p class="section-sub">
+Aalap Pharma is committed to providing trusted healthcare solutions through
+high-quality pharmaceutical products. We focus on innovation, quality,
+affordability and long-term customer relationships.
+</p>
 
-{
-name:"Aalzole-D 10/20",
-details:"Acidity and reflux treatment."
-},
+</section>
 
-{
-name:"Aalzole-D 30/20",
-details:"Advanced gastro care."
-},
+<section class="section" style="background:#f8fafc;">
 
-{
-name:"Aalamol-P",
-details:"Pain relief tablet."
-},
+<h2 class="section-title">Featured Products</h2>
 
-{
-name:"Aalamol-SP",
-details:"Pain and inflammation management."
-},
+<div class="products">
 
-{
-name:"Aalacet-DX Syrup",
-details:"Cough syrup."
-},
-
-{
-name:"Maicef 200 DT",
-details:"Antibiotic dispersible tablet."
-},
-
-{
-name:"Marazz-O",
-details:"Antibacterial medication."
-},
-
-{
-name:"Vi-Lift Q50",
-details:"Nutritional supplement."
-}
-
-];
-
-const container =
-document.getElementById("productContainer");
-
-function displayProducts(data){
-
-container.innerHTML="";
-
-data.forEach(product=>{
-
-container.innerHTML += `
 <div class="card">
-<h3>${product.name}</h3>
-<p>${product.details}</p>
-<button onclick="showDetails('${product.name}','${product.details}')">
-View Details
-</button>
+<img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200">
+<div class="card-content">
+<h3>Aalacold Tablet</h3>
+<p>Cold & Fever Management</p>
 </div>
-`;
+</div>
 
-});
+<div class="card">
+<img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=1200">
+<div class="card-content">
+<h3>Aalukast-M</h3>
+<p>Allergy & Respiratory Care</p>
+</div>
+</div>
 
-}
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631549916768-4119b4123a02?q=80&w=1200">
+<div class="card-content">
+<h3>Aalazi 500</h3>
+<p>Advanced Antibiotic Solution</p>
+</div>
+</div>
 
-displayProducts(products);
+</div>
 
-document.getElementById("search")
-.addEventListener("keyup",function(){
+</section>
 
-const value =
-this.value.toLowerCase();
+<section class="section">
 
-const filtered =
-products.filter(product =>
-product.name.toLowerCase()
-.includes(value)
-);
+<h2 class="section-title">Why Choose Aalap Pharma?</h2>
 
-displayProducts(filtered);
+<div class="why">
 
-});
+<div class="why-box">
+<h3>✔ Quality Assured</h3>
+</div>
 
-function showDetails(name,details){
+<div class="why-box">
+<h3>✔ Trusted Formulations</h3>
+</div>
 
-document.getElementById("title").innerText=name;
+<div class="why-box">
+<h3>✔ Affordable Healthcare</h3>
+</div>
 
-document.getElementById("details").innerText=details;
+<div class="why-box">
+<h3>✔ Growing Distribution Network</h3>
+</div>
 
-document.getElementById("modal").style.display="block";
+</div>
 
-}
+</section>
 
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
+<section class="cta">
 
-</script>
+<h2>Become Our Distribution Partner</h2>
+
+<p>Join Aalap Pharma and grow with a trusted healthcare brand.</p>
+
+<br>
+
+<a href="#" class="btn">
+Apply Now
+</a>
+
+</section>
+
+<footer>
+
+<h3>Aalap Pharma</h3>
+<p>Trusted Healthcare. Better Tomorrow.</p>
+<br>
+<p>© 2026 Aalap Pharma. All Rights Reserved.</p>
+
+</footer>
 
 </body>
 </html>
